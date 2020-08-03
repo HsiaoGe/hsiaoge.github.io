@@ -1,10 +1,10 @@
 ---
 layout: default
-title: 你好，世界
+title: hello world
 ---
 
 # {{ page.title }}
 
-## 我的第一篇文章
+## my first page
 
 {{ page.date | date_to_string }}
