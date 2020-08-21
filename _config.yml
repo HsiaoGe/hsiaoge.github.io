@@ -17,10 +17,10 @@
 ## => Site Settings
 ##############################
 text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
-highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
+highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl :  # does not include hostname
-title   : HsiaoGe's Blob
+title   : HsiaoGe's GitHub Page
 description: > # this means to ignore newlines until "Language & timezone"
   share my code
 
@@ -118,7 +118,7 @@ sharing:
 ## => Comments
 ##############################
 comments:
-  provider: false # false (default), "disqus", "gitalk", "valine", "custom"
+  provider: gitalk # false (default), "disqus", "gitalk", "valine", "custom"
 
   ## Disqus
   disqus:
@@ -127,12 +127,12 @@ comments:
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
   gitalk:
-    clientID    : # GitHub Application Client ID
-    clientSecret: # GitHub Application Client Secret
-    repository  : # GitHub repo
-    owner       : # GitHub repo owner
-    admin: # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
-      # - your GitHub Id
+    clientID    : 07b2100769f647853d47
+    clientSecret: 2cfe2ff561ebd2d5d3118a0d344f9b0d454c73fa
+    repository  : hsiaoge.github.io
+    owner       : HsiaoGe
+    admin: 
+      - HsiaoGe
 
   ## Valine
   # please refer to https://valine.js.org/en/ for more info.
@@ -147,13 +147,13 @@ comments:
 ## => Pageview
 ##############################
 pageview:
-  provider: false # false (default), "leancloud", "custom"
+  provider: leancloud # false (default), "leancloud", "custom"
 
   ## Leancloud
   leancloud:
-    app_id    : # LeanCloud App id
-    app_key   : # LeanCloud App key
-    app_class : # LeanCloud App class
+    app_id    : Nj1n0eA0mNdDwi6KmWC9JvBh-gzGzoHsz
+    app_key   : 2uxRYaSvaDrsPolWqQGrgWaJ
+    app_class : github_count
 
 
 ## => Search
