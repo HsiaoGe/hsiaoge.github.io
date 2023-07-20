@@ -8,7 +8,7 @@
 
 ​	Runner能够拉取代码（用的是Token的权限），然后在项目根目录下执行在.gitlab-ci.yml里的script脚本语句来实现编译、测试和部署等其他功能。
 
-​	因为是编译windows下的exe和dll，打开[Install GitLab Runner on Windows | GitLab](https://docs.gitlab.com/runner/install/windows.html)，只需要下载Windows的64版本即可，下载完成之后无需安装，找到一个位置创建一个英文目录，把下载的exe复制过去即可，注意这个目录就是runner的工作目录，后续不能再动了。
+​	因为是编译windows下的exe和dll，打开[Install GitLab Runner on Windows](https://docs.gitlab.com/runner/install/windows.html)，只需要下载Windows的64版本即可，下载完成之后无需安装，找到一个位置创建一个英文目录，把下载的exe复制过去即可，注意这个目录就是runner的工作目录，后续不能再动了。
 
 
 
@@ -71,11 +71,11 @@ upload_job:
   script:
     - new-item -itemtype directory -path "$env:RELEASE_DIR/$CI_PROJECT_NAME/$CI_COMMIT_REF_NAME/Release" -force
     - new-item -itemtype directory -path "$env:RELEASE_DIR/$CI_PROJECT_NAME/$CI_COMMIT_REF_NAME/Debug" -force
-    - copy-item -path bin/Release/tlmv.* -destination "$env:RELEASE_DIR/$CI_PROJECT_NAME/$CI_COMMIT_REF_NAME/Release"
-    - copy-item -path bin/Debug/tlmvd.* -destination "$env:RELEASE_DIR/$CI_PROJECT_NAME/$CI_COMMIT_REF_NAME/Debug"
+    - copy-item -path bin/Release/*.dll -destination "$env:RELEASE_DIR/$CI_PROJECT_NAME/$CI_COMMIT_REF_NAME/Release"
+    - copy-item -path bin/Debug/*.dll -destination "$env:RELEASE_DIR/$CI_PROJECT_NAME/$CI_COMMIT_REF_NAME/Debug"
 ```
 
-具体语法见[GitLab CI/CD | GitLab](https://docs.gitlab.com/ee/ci/index.html)。
+具体语法见[GitLab CI/CD](https://docs.gitlab.com/ee/ci/index.html)。
 
 ​		只简单分成了build和upload阶段，编译阶段利用devenv.com直接在命令行编译sln工程文件，编译完成之后把生成的动态库文件进行cache。不cache的话，会在build的job完成之后，立即清理生成的所有文件，无法保存编译好的动态库。upload阶段就是把编译好的动态库复制到其他地方，测试人员从这个统一的地方拿动态库进行测试和发布。
 
