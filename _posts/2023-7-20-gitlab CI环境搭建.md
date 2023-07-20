@@ -16,7 +16,7 @@
 
 首先你的账户权限必须是Maintainer，否则无法获取Runner的注册token。
 
-![image-20230720221358155](../assets/images/image-20230720221358155.png)
+![image-20230720221358155](/assets/images/image-20230720221358155.png)
 
 打开`设置`→`CI/CD`，展开`Runner`，找到`URL`和`注册令牌`，然后再Runner目录下执行：
 
@@ -32,11 +32,11 @@
 
 需要注意，此时启动Runner，会以默认`system`的身份执行，这会导致本来能编译的项目，再Runner里编译出错。gitlab-runner也支持指定用户，但是实测没有生效，原因未知。正确做法是`win+R`输入`services.msc`打开服务管理窗口，找到`gitlab-runner`服务，打开属性：
 
-![image-20230720223724654](..\assets\images\image-20230720223724654.png)
+![image-20230720223724654](/assets/images/image-20230720223724654.png)
 
 输入当前的用户名和密码，然后启动服务即可，此时再次打开你的项目CI/CD的Runner页面，可以看到:
 
-![image-20230720224042170](..\assets\images\image-20230720224042170.png)
+![image-20230720224042170](/assets/images/image-20230720224042170.png)
 
 说明已经注册成功。
 
